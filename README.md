@@ -843,4 +843,4 @@ This project is currently unlicensed. Add a `LICENSE` file (e.g., MIT, Apache 2.
 
 ---
 
-> Made with ❤️ by the Artify team. Built with Angular 17 + Bootstrap 5 + AOS.
+
