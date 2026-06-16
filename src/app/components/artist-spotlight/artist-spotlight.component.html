@@ -1,0 +1,61 @@
+<section class="section-padding">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="fw-bold text-white">Artist Spotlight</h2>
+        <p class="text-white">Meet the creative minds.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-3" *ngFor="let artist of artists" data-aos="fade-up">
+        <div class="glass-card p-3 text-center artist-card">
+          <img
+            [src]="artist.photoUrl"
+            class="artist-photo mx-auto d-block mb-3"
+            alt="{{ artist.name }}"
+            loading="lazy"
+          />
+          <h5 class="mb-1 text-white">{{ artist.name }}</h5>
+          <p class="small text-white">{{ artist.bio }}</p>
+          <div class="mt-2">
+            <button
+              class="btn btn-neon btn-sm"
+              (click)="openCollection(collectionModal, artist)"
+            >
+              View Collection
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Template -->
+  <ng-template #collectionModal let-modal>
+    <div class="modal-header border-0">
+      <h5 class="modal-title">{{ selectedArtist?.name }}’s Collection</h5>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss()"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div class="row g-3">
+        <div
+          class="col-md-4"
+          *ngFor="let img of selectedArtist?.collection"
+        >
+          <img
+            [src]="img"
+            class="img-fluid rounded-3 shadow-sm artwork-preview"
+            alt="artwork"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</section>

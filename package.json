@@ -1,0 +1,38 @@
+{
+  "name": "artify",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "dependencies": {
+    "@angular/animations": "~17.3.0",
+    "@angular/common": "~17.3.0",
+    "@angular/compiler": "~17.3.0",
+    "@angular/core": "~17.3.0",
+    "@angular/forms": "~17.3.0",
+    "@angular/localize": "~17.3.0",
+    "@angular/platform-browser": "~17.3.0",
+    "@angular/platform-browser-dynamic": "~17.3.0",
+    "@angular/router": "~17.3.0",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.13.1",
+    "ngx-toastr": "^17.0.2",
+    "rxjs": "~7.8.1",
+    "sass": "^1.93.3",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.14.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~17.3.5",
+    "@angular/cli": "~17.3.5",
+    "@angular/compiler-cli": "~17.3.0",
+    "typescript": "~5.3.3"
+  }
+}

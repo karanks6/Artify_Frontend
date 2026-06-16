@@ -1,0 +1,73 @@
+.section-padding {
+  padding: 80px 0;
+}
+
+.artist-card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.artist-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  transition: border-color 0.3s ease;
+}
+
+.artist-card:hover .artist-photo {
+  border-color: #ff00ff;
+}
+
+/* Button styling */
+.btn-neon {
+  background: linear-gradient(90deg, #a100ff, #ff00ff);
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.9);
+  transform: scale(1.05);
+}
+
+/* Dark mode fix for button text */
+body.dark-mode .btn-neon {
+  color: #fff !important;
+}
+
+/* Modal gallery styling */
+.artwork-preview {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  color: #262323;
+}
+
+.modal-title {
+  color: #fff;
+}
+
+body.light-mode .modal-content {
+  background: #242121;
+  color: #000;
+}

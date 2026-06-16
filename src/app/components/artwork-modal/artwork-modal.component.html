@@ -1,0 +1,16 @@
+<div class="modal-header border-0">
+  <h5 class="modal-title">{{current?.title}}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close()"></button>
+</div>
+<div class="modal-body text-center">
+  <img [src]="current?.imageUrl" [alt]="current?.title" class="modal-artwork mb-3" loading="lazy" />
+  <p class="mb-0"><strong>{{current?.artistName}}</strong></p>
+  <p class="text-muted">{{current?.description}}</p>
+</div>
+<div class="modal-footer border-0 d-flex justify-content-between">
+  <div>
+    <button class="btn btn-outline-light" (click)="prev()" [disabled]="index===0">Previous</button>
+    <button class="btn btn-outline-light ms-2" (click)="next()" [disabled]="index===artworks.length-1">Next</button>
+  </div>
+  <button class="btn btn-neon" (click)="activeModal.close()">Close</button>
+</div>

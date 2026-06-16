@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#home"><span class="brand-gradient">Artify</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#artists">Artists</a></li>
+        <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+        <li class="nav-item ms-3">
+          <button class="btn btn-sm btn-outline-light" (click)="onToggle()" [attr.aria-pressed]="dark ? 'false' : 'true'">
+            <i class="bi" [ngClass]="dark ? 'bi-sun' : 'bi-moon'"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

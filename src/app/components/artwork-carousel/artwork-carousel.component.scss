@@ -1,0 +1,91 @@
+.section-padding { padding: 3.2rem 0; }
+
+.carousel-root {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 14px;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+/* slide area holds all slides stacked; we show only .active */
+.slide-area { position: relative; min-height: 320px; }
+
+/* each slide is absolutely stacked */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: opacity .45s ease, transform .45s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.slide.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* slide inner layout */
+.slide-inner { width: 100%; }
+
+.artwork-thumb {
+  max-height: 380px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Meta styling */
+.slide-meta { color: #e9eefb; }
+body.light-mode .slide-meta { color: #111; }
+
+/* neon button */
+.btn-neon {
+  background: linear-gradient(90deg, #7b2ff7 0%, #ff2d95 100%);
+  color: #fff;
+  border: none;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(123,47,247,0.12);
+}
+
+/* thumbnails */
+.thumb-row { padding: .5rem 0; }
+.thumb-btn {
+  border: none;
+  background: transparent;
+  padding: 2px;
+  border-radius: 8px;
+  outline: none;
+}
+.thumb-btn img {
+  width: 64px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: .8;
+  transition: transform .18s ease, opacity .18s ease;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+.thumb-btn.active img {
+  transform: scale(1.06);
+  opacity: 1;
+  border-color: var(--accent-2, #7b2ff7);
+}
+
+/* ensure thumbnails visible in light mode */
+body.light-mode .thumb-btn img { border-color: rgba(0,0,0,0.06); }
+
+/* small screens */
+@media (max-width: 767px) {
+  .slide-area { min-height: 320px; }
+  .artwork-thumb { max-height: 240px; }
+  .thumb-btn img { width: 48px; height: 36px; }
+}

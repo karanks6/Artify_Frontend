@@ -1,0 +1,26 @@
+<section class="section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="glass-card p-4 text-center">
+          <h3 class="fw-bold text-white">Join Our Creative Family</h3>
+          <p class="text-white">Stay updated with the latest artworks and events.</p>
+          <form [formGroup]="form" (ngSubmit)="submit()" class="row g-2 justify-content-center mt-3">
+            <div class="col-sm-8">
+              <input formControlName="email" type="email" class="form-control form-control-lg" placeholder="Your email" [class.is-invalid]="form.controls.email.invalid && form.controls.email.touched" />
+              <div *ngIf="form.controls.email.invalid && form.controls.email.touched" class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-sm-4 d-grid">
+              <button class="btn btn-neon btn-lg" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <div class="mt-3">
+            <a class="btn btn-light btn-sm me-2" aria-label="Discord"><i class="bi bi-discord"></i></a>
+            <a class="btn btn-light btn-sm me-2" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a class="btn btn-light btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

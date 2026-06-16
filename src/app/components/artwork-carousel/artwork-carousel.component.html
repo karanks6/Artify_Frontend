@@ -1,0 +1,60 @@
+<section class="section-padding">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="fw-bold text-white">Featured Artworks</h2>
+        <p class="text-white">Curated selection from our creators.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="carousel-root glass-card p-3">
+          <!-- Slide area -->
+          <div class="slide-area">
+            <ng-container *ngIf="artworks.length; else noArt">
+              <div class="slide" *ngFor="let art of artworks; let i = index"
+                   [class.active]="i === activeIndex" aria-hidden="{{ i !== activeIndex }}">
+                <div class="slide-inner row g-0 align-items-center">
+                  <div class="col-md-6 p-3 text-center">
+                    <img [src]="art.imageUrl"
+                         [alt]="art.title"
+                         class="img-fluid artwork-thumb"
+                         (load)="void(0)" />
+                  </div>
+                  <div class="col-md-6 p-3 slide-meta">
+                    <h3 class="mb-1">{{ art.title }}</h3>
+                    <p class="small text-white mb-2">By {{ art.artistName }}</p>
+                    <p class="mb-3">{{ art.description }}</p>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-neon" (click)="openPreview(i)">View Artwork</button>
+                      <button class="btn btn-outline-light" (click)="prev()">&larr; Prev</button>
+                      <button class="btn btn-outline-light" (click)="next()">Next &rarr;</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+
+            <ng-template #noArt>
+              <div class="text-center p-5">No artworks found.</div>
+            </ng-template>
+          </div>
+
+          <!-- Thumbnails / indicators -->
+          <div class="thumb-row mt-3 d-flex justify-content-center gap-2 align-items-center">
+            <button *ngFor="let art of artworks; let i = index"
+                    class="thumb-btn"
+                    [class.active]="i === activeIndex"
+                    (click)="goTo(i)"
+                    (mouseenter)="stopAutoPlay()"
+                    (mouseleave)="startAutoPlay()"
+                    [attr.aria-label]="'Go to ' + art.title">
+              <img [src]="art.imageUrl" [alt]="art.title" loading="lazy" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

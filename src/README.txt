@@ -1,0 +1,1 @@
+This folder contains the Artify Angular project source. Run npm install then ng serve.
