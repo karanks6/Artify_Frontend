@@ -842,5 +842,3 @@ The compiled, optimised output will be placed in `dist/artify/`. You can serve t
 This project is currently unlicensed. Add a `LICENSE` file (e.g., MIT, Apache 2.0) if you plan to open-source it.
 
 ---
-
-
